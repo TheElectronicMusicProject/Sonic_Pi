@@ -1,0 +1,12 @@
+# 12.1 Receiving OSC
+
+# OSC = Open Sound Control protocol
+# Default listening port: 4560
+# To enable OSC support from external machines: Preferences->IO->Networked OSC->Allow OSC
+
+live_loop :foo do
+  use_real_time
+  # OSC path to listen to all incoming OSC messages
+  a. b. c. = sync "/osc*/trigger/prophet"
+  synth :prophet, note: a, cutoff: b, sustain: c
+end
